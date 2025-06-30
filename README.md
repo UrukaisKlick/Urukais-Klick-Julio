@@ -114,6 +114,6 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 ---
 
 <div align="center">
-  <p>Hecho con ❤️ por <a href="https://github.com/tu-usuario">Manuel Casimiro Carrasco</a></p>
+  <p>Hecho con ❤️ por <a href="[https://github.com/tu-usuario](https://silly-boba-dc057e.netlify.app/)">Manuel Casimiro Carrasco</a></p>
   <p>© 2025 Urukais Klick. Todos los derechos reservados.</p>
 </div>
