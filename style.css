@@ -437,3 +437,165 @@ h1, h2 {
     }
     /* .main-title already has responsive rules */
 }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 60px; /* Location of the box */
+}
+
+.modal-content {
+    background-color: #1c1c1c; /* Dark background for modal content */
+    color: #e0e0e0; /* Light text */
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 25px;
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 700px; /* Maximum width */
+    box-shadow: 0 5px 15px rgba(255,215,0,0.2); /* Gold glow */
+    position: relative;
+    animation: fadeInModal 0.5s ease-out;
+}
+
+@keyframes fadeInModal {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-close-button {
+    color: #FFD700;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.modal-content h2 { /* Artist Name in Modal */
+    color: #FFD700;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #B8860B; /* Subtle gold line */
+    padding-bottom: 10px;
+}
+
+.modal-body h3 { /* Biography/Albums subheadings */
+    color: #FFD700;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-body p#modalArtistBio {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 20px;
+    max-height: 200px; /* Limit bio height and make it scrollable if it overflows */
+    overflow-y: auto; /* Add scroll for overflowing bio */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Scrollbar styling for bio (WebKit browsers) */
+.modal-body p#modalArtistBio::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-body p#modalArtistBio::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 4px;
+}
+.modal-body p#modalArtistBio::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
+}
+.modal-body p#modalArtistBio::-webkit-scrollbar-thumb:hover {
+    background: #B8860B;
+}
+
+
+#modalArtistAlbums {
+    list-style-type: none;
+    padding-left: 0;
+    max-height: 150px; /* Limit album list height */
+    overflow-y: auto; /* Add scroll for overflowing album list */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+#modalArtistAlbums li {
+    background-color: #282828;
+    border: 1px solid #B8860B;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Scrollbar styling for album list (WebKit browsers) */
+#modalArtistAlbums::-webkit-scrollbar {
+    width: 8px;
+}
+#modalArtistAlbums::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 4px;
+}
+#modalArtistAlbums::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 4px;
+}
+#modalArtistAlbums::-webkit-scrollbar-thumb:hover {
+    background: #B8860B;
+}
+
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+    .modal-body h3 {
+        font-size: 1.2rem;
+    }
+    .modal-body p#modalArtistBio, #modalArtistAlbums {
+        max-height: 150px; /* Adjust max height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 15px;
+        margin: 10% auto;
+    }
+     .modal-content h2 {
+        font-size: 1.5rem;
+    }
+    .modal-body h3 {
+        font-size: 1.1rem;
+    }
+     .modal-body p#modalArtistBio, #modalArtistAlbums {
+        max-height: 120px; /* Further adjust max height */
+    }
+}
